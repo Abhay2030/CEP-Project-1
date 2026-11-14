@@ -467,22 +467,8 @@ function showSolarResources() {
 }
 
 // ---------------------------------------------------------
-// 10. Field visit photo placeholders
+// 10. (Removed — no longer using photo placeholders)
 // ---------------------------------------------------------
-function showVisitPhotoPlaceholders() {
-    let photosHTML = "";
-
-    for (let photoNumber = 2; photoNumber <= 6; photoNumber++) {
-        photosHTML += `
-            <div class="photo-placeholder">
-                Field visit photo ${photoNumber}<br>
-                [Add image]
-            </div>
-        `;
-    }
-
-    getElement("visitGallery").innerHTML = photosHTML;
-}
 
 // ---------------------------------------------------------
 // 11. Frequently asked questions
@@ -603,7 +589,6 @@ function startWebsite() {
     showInstallationSteps();
     setupSolarCalculator();
     showSolarResources();
-    showVisitPhotoPlaceholders();
     showFAQs();
     showReferences();
     setupScrollEffects();
