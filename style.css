@@ -212,7 +212,93 @@ p {
     }
 }
 
-/* 4. General sections and cards */
+/* 4. Showcase banner section */
+.showcase-section {
+    padding: 0;
+    max-width: none;
+}
+
+.showcase-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.showcase-image {
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center 30%;
+    filter: brightness(0.85);
+    transition: transform 0.6s ease;
+}
+
+.showcase-wrapper:hover .showcase-image {
+    transform: scale(1.03);
+}
+
+.showcase-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: flex-end;
+    background: linear-gradient(
+        to top,
+        #050a07 0%,
+        #050a07cc 25%,
+        transparent 60%
+    );
+}
+
+.showcase-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5vw 50px;
+    width: 100%;
+}
+
+.showcase-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+    background: #f5b942;
+    color: #201400;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 14px;
+}
+
+.showcase-title {
+    font-size: clamp(28px, 5vw, 46px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 10px;
+    color: var(--text);
+    line-height: 1.15;
+}
+
+.showcase-description {
+    max-width: 560px;
+    color: #dfeee5;
+    font-size: clamp(15px, 2vw, 18px);
+    margin: 0 0 18px;
+    line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+    .showcase-image {
+        height: 380px;
+        object-position: center 25%;
+    }
+
+    .showcase-content {
+        padding: 0 6vw 36px;
+    }
+}
+
+/* 5. General sections and cards */
 .section {
     max-width: 1200px;
     margin: auto;
@@ -473,6 +559,46 @@ p {
 
 .visit-details {
     margin-bottom: 24px;
+}
+
+/* Site visit featured photo */
+.site-visit-hero {
+    position: relative;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.site-visit-hero:hover {
+    transform: translateY(-5px);
+    border-color: #10b98177;
+}
+
+.site-visit-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 520px;
+}
+
+.site-visit-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    background: linear-gradient(transparent, #050a07ee 40%);
+}
+
+.site-visit-caption p {
+    margin: 8px 0 0;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .photo-grid {

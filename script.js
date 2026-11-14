@@ -472,7 +472,7 @@ function showSolarResources() {
 function showVisitPhotoPlaceholders() {
     let photosHTML = "";
 
-    for (let photoNumber = 1; photoNumber <= 6; photoNumber++) {
+    for (let photoNumber = 2; photoNumber <= 6; photoNumber++) {
         photosHTML += `
             <div class="photo-placeholder">
                 Field visit photo ${photoNumber}<br>
