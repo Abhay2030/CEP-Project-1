@@ -1,0 +1,638 @@
+/* 1. Basic page settings */
+:root {
+    --background: #050a07;
+    --card: #0c1812;
+    --text: #f4f8f5;
+    --muted: #9db3a5;
+    --green: #10b981;
+    --dark-green: #0f5132;
+    --gold: #f5b942;
+    --border: #ffffff1a;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    margin: 0;
+    padding-top: env(safe-area-inset-top, 0px);
+    background: var(--background);
+    color: var(--text);
+    font: 16px/1.65 "Sora", Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+h1, h2, h3 {
+    line-height: 1.15;
+    margin: 0 0 12px;
+}
+
+p {
+    margin: 8px 0;
+}
+
+/* 2. Navigation bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 4vw;
+    background: #050a07dd;
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(14px);
+}
+
+.brand {
+    margin-right: auto;
+    color: var(--text);
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+}
+
+.nav-links a {
+    padding: 6px 10px;
+    border-radius: 30px;
+    color: var(--muted);
+    font-size: 13px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    background: #10b98133;
+    color: white;
+}
+
+/* 3. Hero section */
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    max-width: none;
+    padding: 120px 5vw 80px;
+    overflow: hidden;
+    background: linear-gradient(#0b3b6b 0%, #3d8fd1 38%, #f7c873 52%, #0a1a12 52.2%);
+}
+
+.hero::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: linear-gradient(90deg, #050a07dd, #050a0733 70%), linear-gradient(transparent 60%, var(--background));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 760px;
+}
+
+.hero-sun {
+    position: absolute;
+    top: 28%;
+    left: 62%;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background: radial-gradient(#fff6c8, #f5b94288 45%, transparent 70%);
+}
+
+.solar-field {
+    position: absolute;
+    top: 52%;
+    right: -30%;
+    bottom: 0;
+    left: -30%;
+    transform: perspective(500px) rotateX(58deg);
+    transform-origin: top;
+    background:
+        linear-gradient(#ffffff18 2px, transparent 2px) 0 0 / 100% 46px,
+        linear-gradient(90deg, #ffffff22 2px, transparent 2px) 0 0 / 70px 100%,
+        linear-gradient(#16355f, #0a1f3d);
+}
+
+.hero h1 {
+    max-width: 760px;
+    font-size: clamp(38px, 8vw, 88px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+.hero-description {
+    max-width: 700px;
+    color: #dfeee5;
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.button {
+    display: inline-block;
+    margin: 8px 10px 0 0;
+    padding: 14px 26px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.25s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+}
+
+.button-primary {
+    background: var(--gold);
+    color: #201400;
+}
+
+.button-secondary {
+    background: #ffffff14;
+    backdrop-filter: blur(8px);
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    z-index: 3;
+    width: 24px;
+    height: 40px;
+    border: 2px solid #ffffff99;
+    border-radius: 14px;
+}
+
+.scroll-indicator::after {
+    position: absolute;
+    top: 7px;
+    left: 9px;
+    width: 4px;
+    height: 8px;
+    border-radius: 2px;
+    background: white;
+    content: "";
+    animation: scroll-down 1.6s infinite;
+}
+
+@keyframes scroll-down {
+    to {
+        transform: translateY(14px);
+        opacity: 0;
+    }
+}
+
+/* 4. General sections and cards */
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 84px 5vw;
+}
+
+.section h2 {
+    margin-bottom: 18px;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.section-heading {
+    margin: 36px 0 18px;
+}
+
+.section-intro {
+    max-width: 780px;
+    color: var(--muted);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.card {
+    padding: 24px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(160deg, #10231a, var(--card));
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #10b98177;
+}
+
+.card p,
+.small-note {
+    color: var(--muted);
+}
+
+.small-note,
+.card small {
+    display: block;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+.statistic-card strong {
+    display: block;
+    color: var(--gold);
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 800;
+}
+
+/* 5. Team cards and images */
+.team-card h3 {
+    font-size: 20px;
+}
+
+.team-photo,
+.team-avatar {
+    display: grid;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    margin-bottom: 14px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+.team-avatar {
+    place-items: center;
+    background: radial-gradient(circle at 30% 20%, #10b98144, transparent 60%), linear-gradient(145deg, var(--dark-green), #04100a);
+    color: var(--gold);
+    font-size: 64px;
+    font-weight: 800;
+}
+
+.small-text {
+    margin: 2px 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* 6. Solar steps and diagrams */
+.two-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.align-start {
+    align-items: start;
+}
+
+.step-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 18px 0;
+}
+
+.step-button,
+.energy-tab {
+    padding: 9px 16px;
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    background: #ffffff0d;
+    color: var(--text);
+    cursor: pointer;
+    font: inherit;
+    font-size: 14px;
+}
+
+.step-button.active,
+.energy-tab.active {
+    border-color: var(--green);
+    background: var(--green);
+    color: #022;
+}
+
+.step-description {
+    min-height: 110px;
+}
+
+.solar-diagram {
+    width: 100%;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: #071410;
+}
+
+.topic-grid {
+    margin-top: 30px;
+}
+
+/* 7. Renewable energy details */
+.energy-detail {
+    margin-top: 22px;
+}
+
+.energy-detail h3 {
+    margin-bottom: 20px;
+}
+
+.energy-information {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.energy-information strong {
+    color: var(--gold);
+}
+
+/* 8. Installation timeline and calculator */
+.timeline {
+    margin-left: 8px;
+    border-left: 2px solid var(--green);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 0 22px 24px;
+}
+
+.timeline-item::before {
+    position: absolute;
+    top: 6px;
+    left: -7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    content: "";
+}
+
+.timeline-item p {
+    margin: 2px 0;
+    color: var(--muted);
+}
+
+.stacked-cards {
+    display: grid;
+    gap: 18px;
+}
+
+.calculator-card label {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+.calculator-card input {
+    width: 100%;
+    margin: 6px 0;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #071410;
+    color: var(--text);
+    font: inherit;
+}
+
+.result-box {
+    margin-top: 16px;
+    padding: 20px;
+    border: 1px solid #10b98155;
+    border-radius: 16px;
+    background: #10b9811a;
+}
+
+.result-box strong {
+    color: var(--gold);
+    font-size: 25px;
+}
+
+/* 9. Resource links, visit photos, FAQs */
+.tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 30px;
+    background: #ffffff14;
+    font-size: 11px;
+}
+
+.tag-government {
+    background: var(--gold);
+    color: #201400;
+}
+
+.resource-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--green);
+}
+
+.photo-placeholder {
+    display: grid;
+    aspect-ratio: 4 / 3;
+    place-items: center;
+    padding: 10px;
+    border: 2px dashed #ffffff33;
+    border-radius: 16px;
+    color: var(--muted);
+    font-size: 14px;
+    text-align: center;
+}
+
+.visit-details {
+    margin-bottom: 24px;
+}
+
+/* Site visit featured photo */
+.site-visit-hero {
+    position: relative;
+    margin-top: 28px;
+    margin-bottom: 28px;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.site-visit-hero:hover {
+    transform: translateY(-5px);
+    border-color: #10b98177;
+}
+
+.site-visit-hero img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 520px;
+}
+
+.site-visit-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 24px;
+    background: linear-gradient(transparent, #050a07ee 40%);
+}
+
+.site-visit-caption p {
+    margin: 8px 0 0;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.photo-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+details {
+    margin: 10px 0;
+    padding: 16px 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--card);
+}
+
+summary {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+details p {
+    color: var(--muted);
+}
+
+/* 10. Footer and back-to-top button */
+.footer {
+    padding: 50px 5vw 90px;
+    border-top: 1px solid var(--border);
+    background: #030705;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer strong {
+    color: white;
+}
+
+.footer a {
+    display: block;
+    padding: 3px 0;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.copyright {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 18px;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+    z-index: 25;
+    width: 46px;
+    height: 46px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--gold);
+    cursor: pointer;
+    font-size: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 11. Small screen and accessibility settings */
+@media (max-width: 700px) {
+    .brand {
+        display: none;
+    }
+
+    .navbar {
+        padding-right: 3vw;
+        padding-left: 3vw;
+    }
+
+    .hero {
+        padding-right: 6vw;
+        padding-left: 6vw;
+    }
+
+    .section {
+        padding: 65px 6vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Reveal cards gently when they enter the screen */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.8s, transform 0.8s;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: none;
+}

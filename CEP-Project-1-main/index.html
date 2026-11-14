@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="An educational guide to solar and renewable energy by Information Technology students of Sir Visvesvaraya Institute of Technology, Sinnar.">
+    <title>Renewable Energy &amp; Solar Power | SVIT Sinnar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+        <a class="brand" href="#home">☀ Renewable Energy &amp; Solar</a>
+        <div class="nav-links" id="navLinks"></div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="hero" id="home">
+        <div class="hero-sun" aria-hidden="true"></div>
+        <div class="solar-field" aria-hidden="true"></div>
+
+        <div class="hero-content">
+            <p class="eyebrow">Engineering Project · SVIT Sinnar</p>
+            <h1>Powering Tomorrow, Sustainably.</h1>
+            <p class="hero-description">
+                Discover how solar energy and renewable technologies are transforming our world into a cleaner,
+                greener, and more sustainable future.
+            </p>
+            <a class="button button-primary" href="#renewable">Explore Renewable Energy</a>
+            <a class="button button-secondary" href="#project">Discover Our Project</a>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true"></div>
+    </header>
+
+    <main>
+        <!-- Renewable energy statistics -->
+        <section id="stats" class="section">
+            <p class="eyebrow">The Big Picture</p>
+            <h2>Clean Energy, by the Numbers</h2>
+            <div class="card-grid">
+                <article class="card statistic-card reveal">
+                    <strong>+585 GW</strong>
+                    <p>Renewable capacity added worldwide in 2024, about 92% of all new power capacity.</p>
+                    <small>Source: IRENA, Renewable Capacity Statistics 2025</small>
+                </article>
+                <article class="card statistic-card reveal">
+                    <strong>4–7 kWh/m²</strong>
+                    <p>Average daily solar radiation over most of India, on roughly 300 sunny days a year.</p>
+                    <small>Source: MNRE (mnre.gov.in)</small>
+                </article>
+                <article class="card statistic-card reveal">
+                    <strong>500 GW</strong>
+                    <p>India's target for non-fossil electricity capacity by 2030, with solar as the largest share.</p>
+                    <small>Source: Government of India / MNRE, 2021 pledge</small>
+                </article>
+            </div>
+            <p class="small-note">
+                Figures are quoted from the named organisations. Check their latest releases because numbers update every year.
+            </p>
+        </section>
+
+        <!-- Student project and team -->
+        <section id="project" class="section">
+            <p class="eyebrow">Our Project</p>
+            <h2>The Minds Behind the Project</h2>
+            <p class="section-intro">An engineering initiative to explore the future of renewable energy.</p>
+            <div class="card-grid team-grid" id="teamCards"></div>
+            <p class="section-intro">
+                This project explores the potential of solar power and renewable energy through technical research,
+                practical learning, and visits to several solar power plants in Nashik. Our objective is to understand
+                real-world renewable energy systems and their contribution to a sustainable future.
+            </p>
+        </section>
+
+        <!-- Solar energy guide -->
+        <section id="solar" class="section">
+            <p class="eyebrow">Solar Energy</p>
+            <h2>Solar Energy — The Complete Guide</h2>
+            <p class="section-intro">
+                Solar energy is radiant energy from the Sun. Photovoltaic (PV) technology converts light directly into
+                electricity, while solar thermal technology collects heat for water heating, drying, and power generation.
+            </p>
+
+            <h3 class="section-heading">How a Solar Panel Generates Electricity</h3>
+            <div class="two-column">
+                <div>
+                    <div class="step-buttons" id="solarStepButtons"></div>
+                    <p id="solarStepText" class="step-description" aria-live="polite"></p>
+                </div>
+
+                <svg class="solar-diagram" viewBox="0 0 400 260" role="img" aria-label="Diagram showing layers of a solar cell and an electric circuit">
+                    <circle cx="70" cy="50" r="26" fill="#f5b942"></circle>
+                    <g stroke="#f5b942" stroke-width="3">
+                        <path d="M100 70l50 40M105 50l55 20M95 85l40 55"></path>
+                    </g>
+                    <rect x="140" y="110" width="150" height="14" fill="#1a3d7a"></rect>
+                    <rect x="140" y="124" width="150" height="26" fill="#2a5cb3"></rect>
+                    <rect x="140" y="150" width="150" height="34" fill="#16407a"></rect>
+                    <rect x="140" y="184" width="150" height="8" fill="#aaa"></rect>
+                    <g fill="#9db3a5" font-size="10">
+                        <text x="296" y="121">Anti-reflective glass</text>
+                        <text x="296" y="140">N-type silicon</text>
+                        <text x="296" y="170">P-type silicon</text>
+                        <text x="296" y="190">Back contact</text>
+                    </g>
+                    <path d="M140 130H100V230H290V188" fill="none" stroke="#10b981" stroke-width="3" stroke-dasharray="6 6">
+                        <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1s" repeatCount="indefinite"></animate>
+                    </path>
+                    <circle cx="195" cy="230" r="14" fill="#f5b942"></circle>
+                    <text x="188" y="235" font-size="14">💡</text>
+                </svg>
+            </div>
+            <div class="card-grid topic-grid" id="solarTopics"></div>
+        </section>
+
+        <!-- Renewable energy types -->
+        <section id="renewable" class="section">
+            <p class="eyebrow">Renewable Energy</p>
+            <h2>Eight Sources, One Future</h2>
+            <p class="section-intro">
+                Select a source to explore its definition, working principle, components, applications, advantages,
+                limitations, and environmental impact.
+            </p>
+            <div class="step-buttons" id="energyTabs"></div>
+            <div class="card energy-detail" id="energyDetails" aria-live="polite"></div>
+        </section>
+
+        <!-- Benefits and challenges -->
+        <section id="benefits" class="section">
+            <p class="eyebrow">Benefits</p>
+            <h2>Why the World Is Switching to Clean Energy</h2>
+            <div class="card-grid" id="benefitCards"></div>
+
+            <h3 class="section-heading">Limitations and Challenges</h3>
+            <div class="card-grid" id="challengeCards"></div>
+        </section>
+
+        <!-- Solar energy applications -->
+        <section id="applications" class="section">
+            <p class="eyebrow">Applications</p>
+            <h2>Where Solar Is Used</h2>
+            <div class="card-grid" id="applicationCards"></div>
+        </section>
+
+        <!-- Installation process and calculator -->
+        <section id="install" class="section">
+            <p class="eyebrow">Solar Installation</p>
+            <h2>From Site to Switch-On</h2>
+            <div class="two-column align-start">
+                <div class="timeline" id="installationSteps"></div>
+
+                <div class="stacked-cards">
+                    <article class="card">
+                        <h3>Rooftop vs Utility-Scale</h3>
+                        <p><strong>Rooftop (1–10 kW):</strong> Installed on existing roofs, mostly for self-use and net metering. About 10 m² per kW; installation can take days.</p>
+                        <p><strong>Utility-scale (MW+):</strong> Ground-mounted on about 4–5 acres per MW, with high-voltage connection to substations. Projects take months.</p>
+                    </article>
+
+                    <article class="card calculator-card">
+                        <h3>Solar Calculator</h3>
+                        <label for="monthlyUnits">Monthly consumption (units / kWh)</label>
+                        <input id="monthlyUnits" type="number" min="0" value="300">
+
+                        <label for="availableArea">Available area (m²)</label>
+                        <input id="availableArea" type="number" min="0" value="40">
+
+                        <label for="electricityTariff">Tariff (₹ per unit)</label>
+                        <input id="electricityTariff" type="number" min="0" step="0.1" value="8">
+
+                        <div class="result-box" id="calculatorResult" aria-live="polite"></div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Official resources -->
+        <section id="go" class="section">
+            <p class="eyebrow">Resources</p>
+            <h2>Go Solar — Find Your Solar Solution</h2>
+            <p class="section-intro">
+                Verify current product availability, approved vendors, eligibility, prices, and installation terms on
+                official websites before purchasing. Government portals are marked separately.
+            </p>
+            <div class="card-grid resource-grid" id="resourceCards"></div>
+        </section>
+
+        <!-- India and Maharashtra -->
+        <section id="india" class="section">
+            <p class="eyebrow">India &amp; Maharashtra</p>
+            <h2>Solar Energy in India</h2>
+            <div class="card-grid" id="indiaCards"></div>
+        </section>
+
+        <!-- Field visits -->
+        <section id="visits" class="section">
+            <p class="eyebrow">Field Visits</p>
+            <h2>Beyond the Classroom — Learning from Real Solar Installations</h2>
+            <p class="section-intro">
+                Our team visited several solar power plants in Nashik to see practical systems first-hand. The visits
+                helped us understand panel arrangements, inverters and electrical systems, power generation, and the
+                practical importance of renewable energy.
+            </p>
+            <div class="card-grid visit-details">
+                <article class="card"><strong>Plant name</strong><p>Solar Installation, Khambale</p></article>
+                <article class="card"><strong>Location</strong><p>Khambale, Maharashtra 422103, India</p></article>
+                <article class="card"><strong>Date of visit</strong><p>Saturday, 10 October 2026</p></article>
+                <article class="card"><strong>Our observations</strong><p>Studied the rooftop solar panel arrangement, mounting structures, and the practical setup of a grid-connected photovoltaic system in a real-world installation.</p></article>
+            </div>
+
+            <!-- Featured site visit photo -->
+            <div class="site-visit-hero">
+                <img src="images/site-visit-khambale.jpg" alt="Team members at rooftop solar panel installation in Khambale, Maharashtra" loading="lazy">
+                <div class="site-visit-caption">
+                    <span class="tag tag-government">Field Visit</span>
+                    <p>Our team at the rooftop solar installation — Khambale, Maharashtra · 10 Oct 2026</p>
+                </div>
+            </div>
+            <div class="card-grid photo-grid" id="visitGallery"></div>
+        </section>
+
+        <!-- Frequently asked questions -->
+        <section id="faq" class="section">
+            <p class="eyebrow">FAQ</p>
+            <h2>Solar Questions, Answered</h2>
+            <div id="faqList"></div>
+        </section>
+
+        <!-- References -->
+        <section id="refs" class="section">
+            <p class="eyebrow">References</p>
+            <h2>Sources &amp; Further Reading</h2>
+            <div class="card-grid" id="referenceCards"></div>
+        </section>
+
+        <!-- About and contact -->
+        <section id="about" class="section">
+            <p class="eyebrow">About Us</p>
+            <h2>Contact &amp; Project Information</h2>
+            <div class="card">
+                <p>Academic project by four Second Year Information Technology Engineering students, Sir Visvesvaraya Institute of Technology, Sinnar, Maharashtra.</p>
+                <p>Contact: <span>[Add project email]</span></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <strong>Renewable Energy &amp; Solar Power</strong>
+                <p>An educational project on solar and renewable energy.</p>
+                <p>Sir Visvesvaraya Institute of Technology, Sinnar, Maharashtra.</p>
+            </div>
+            <div id="footerNavigation"></div>
+            <div>
+                <strong>Official Resources</strong>
+                <a href="https://mnre.gov.in/" target="_blank" rel="noopener noreferrer">MNRE</a>
+                <a href="https://pmsuryaghar.gov.in/" target="_blank" rel="noopener noreferrer">PM Surya Ghar</a>
+                <a href="https://solarrooftop.pmsuryaghar.gov.in/" target="_blank" rel="noopener noreferrer">National Rooftop Portal</a>
+            </div>
+            <div>
+                <strong>Project Team</strong>
+                <p>Atharva Sandeep Bhalerao<br>Krushna Somnath Kapdi<br>Vedant Rayate<br>Ganesh Dattatray Khade</p>
+            </div>
+        </div>
+        <p class="copyright">© 2026 Renewable Energy &amp; Solar Power · SVIT Sinnar. Educational use.</p>
+    </footer>
+
+    <button id="backToTop" class="back-to-top" type="button" aria-label="Back to top">↑</button>
+    <script src="script.js"></script>
+</body>
+</html>
